@@ -1,9 +1,16 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { useSelector } from "react-redux"
 
 import Layout from "../components/Layout"
 
+import getLanguages from "../utils/language"
+
 const BlogPage = () => {
+  const language = useSelector(({ language }) => language)
+
+  const text = getLanguages(language)
+
   const {
     allContentfulBlogPost: { edges },
   } = useStaticQuery(graphql`
@@ -22,9 +29,9 @@ const BlogPage = () => {
 
   return (
     <Layout>
-      <h1>My Blog</h1>
+      <h1>{text.blog.title}</h1>
 
-      <h4>You can find all the stuff I adore to talk about here.</h4>
+      <h4>{text.blog.subtitle}</h4>
 
       {edges.map(({ node: { slug, title, description } }) => (
         <ol>

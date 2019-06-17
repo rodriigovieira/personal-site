@@ -1,20 +1,14 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { useSelector } from "react-redux"
+
+import getLanguages from "../utils/language"
 
 const Footer = () => {
-  const {
-    site: { siteMetadata: { author } },
-  } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          author
-        }
-      }
-    }
-  `)
+  const language = useSelector(({ language }) => language)
 
-  return <span>Content created by {author}.</span>
+  const text = getLanguages(language)
+
+  return <span>{text.footer.text}</span>
 }
 
 export default Footer

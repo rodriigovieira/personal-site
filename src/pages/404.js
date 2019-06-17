@@ -1,12 +1,22 @@
-import React from 'react'
-import Layout from '../components/Layout'
+import React from "react"
+import { useSelector } from "react-redux"
 
-const Page404 = () => (
-  <Layout>
-    <h1>Not Found</h1>
+import Layout from "../components/Layout"
 
-    <h4>Ergh.... There's nothing here.</h4>
-  </Layout>
-)
+import getLanguages from "../utils/language"
+
+const Page404 = () => {
+  const language = useSelector(({ language }) => language)
+
+  const text = getLanguages(language)
+
+  return (
+    <Layout>
+      <h1>{text.page404.title}</h1>
+
+      <h4>{text.page404.subtitle}</h4>
+    </Layout>
+  )
+}
 
 export default Page404

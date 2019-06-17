@@ -1,18 +1,22 @@
 import React from "react"
+import { useSelector } from "react-redux"
 
 import Layout from "../components/Layout"
 
+import getLanguages from "../utils/language"
+
 const ContactPage = () => {
+  const language = useSelector(({ language }) => language)
+
+  const text = getLanguages(language)
+
   return (
     <Layout>
-      <h1>Say hello to me!</h1>
+      <h1>{text.contact.title}</h1>
 
-      <h4>
-        If you for some reason wish to talk with me, I'd adore to be delighted with
-        your message.
-      </h4>
+      <h4>{text.contact.subtitle}</h4>
 
-      <p>Shoot me at rodriigovieira@gmail.com!</p>
+      <p>{text.contact.paragraph}</p>
     </Layout>
   )
 }
