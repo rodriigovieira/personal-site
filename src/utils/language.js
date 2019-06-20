@@ -7,13 +7,13 @@ const textLabelsEn = {
   contact: {
     title: "Say hello to me!",
     subtitle:
-      "If you for some reason wish to talk with me, I'd adore to be delighted with your message.",
+      "If you for some reason wish to talk with me, I'd love to be delighted with your message.",
     paragraph: "Shoot me at rodriigovieira@gmail.com!",
   },
 
   blog: {
     title: "My Blog",
-    subtitle: "You can find all the stuff I adore to talk about here.",
+    subtitle: "You can find all the stuff I love to talk about here.",
   },
 
   about: {
