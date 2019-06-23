@@ -12,11 +12,12 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <h1>{text.contact.title}</h1>
-
       <h4>{text.contact.subtitle}</h4>
 
-      <p>{text.contact.paragraph}</p>
+      <p>
+        {text.contact.paragraph}{" "}
+        <a href="mailto:rodriigovieira@gmail.com">rodriigovieira@gmail.com</a>!{" "}
+      </p>
     </Layout>
   )
 }

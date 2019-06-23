@@ -1,0 +1,12 @@
+.portfolioContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+}
+
+.portfolioItem {
+  flex: 1 1 calc(50% - 50px);
+  background: #f90;
+  border-top: solid 1px #000;
+  border: 1px solid black;
+}

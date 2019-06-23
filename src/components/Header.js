@@ -51,9 +51,9 @@ const Footer = () => {
         <Link
           className={headerStyles.navItem}
           activeClassName={headerStyles.navItemActive}
-          to="/about"
+          to="/portfolio"
         >
-          {text.header.about}
+          {text.header.portfolio}
         </Link>
         <Link
           className={headerStyles.navItem}
@@ -61,13 +61,6 @@ const Footer = () => {
           to="/contact"
         >
           {text.header.contact}
-        </Link>
-        <Link
-          className={headerStyles.navItem}
-          activeClassName={headerStyles.navItemActive}
-          to="/blog"
-        >
-          {text.header.blog}
         </Link>
 
         <div className={headerStyles.languagesContainer}>

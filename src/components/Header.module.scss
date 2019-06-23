@@ -1,9 +1,10 @@
 .titleContainer {
   margin: 3% 0;
+  text-align: center;
 }
 
 .titleText {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -41,4 +42,5 @@
 
 .nav-item-active {
   color: #333333;
+  border-bottom: 3px solid #333333;
 }

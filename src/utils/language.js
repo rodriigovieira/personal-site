@@ -1,25 +1,29 @@
 const textLabelsEn = {
   index: {
-    title: "Rodrigo Vieira",
-    subtitle: "I make web and mobile apps.",
+    subtitle: "Welcome!",
+    body: {
+      first:
+        "I'm Rodrigo Vieira. A passionate developer, I love to build things, though sometimes not very useful things. From Aracaju, Brazil, currently at Montreal, Canada.",
+      second:
+        "In love with traveling, foodie, calisthenics, and everything else that this world has to offer.",
+      third: "What do I do?",
+      fourth:
+        "At this moment, I'm at Interlaken's dev team, one of the biggest suppliers of systems for gyms in South America.",
+      fifth: "Technologies I love to work with:",
+    },
   },
 
   contact: {
     title: "Say hello to me!",
     subtitle:
-      "If you for some reason wish to talk with me, I'd love to be delighted with your message.",
-    paragraph: "Shoot me at rodriigovieira@gmail.com!",
+      "If you wish to talk with me, I'd love to be delighted with your message.",
+    paragraph: "Shoot me at ",
   },
 
-  blog: {
-    title: "My Blog",
-    subtitle: "You can find all the stuff I love to talk about here.",
-  },
-
-  about: {
+  portfolio: {
     title: "I am Rodrigo.",
     subtitle:
-      "I love making stuff. Specially when we're talking about mobile or webapps.",
+      "Bellow you can find a small piece of what I already did.",
   },
 
   page404: {
@@ -29,40 +33,42 @@ const textLabelsEn = {
 
   footer: {
     text:
-      "© Created by Rodrigo Vieira, 2019. Website built with the Gatsby framework.",
+      "Website built with the Gatsby framework. The source code is available in my Github.",
   },
 
   header: {
-    homepage: "Home Page",
-    about: "About",
+    homepage: "Home",
+    portfolio: "Portfolio",
     contact: "Contact",
-    blog: "Blog",
   },
 }
 
 const textLabelsPt = {
   index: {
-    title: "Rodrigo Vieira",
-    subtitle: "Eu faço aplicações mobile e web.",
+    subtitle: "Bem-vindo!",
+    body: {
+      first:
+        "Eu me chamo Rodrigo Vieira. Sou um programador apaixonado, adoro construir coisas, nem sempre tão úteis. De Aracaju, agora estou em Montreal, Canadá.",
+      second:
+        "Apaixonado por viagens, por comida(s), calistenia e tudo que esse mundo tem a oferecer.",
+      third: "O que eu faço?",
+      fourth:
+        "Agora, estou no time de desenvolvimento da Interlaken, uma das maiores fornecedoras de sistemas de academia da América Latina.",
+      fifth: "Tecnologias que eu amo trabalhar:",
+    },
   },
 
   contact: {
     title: "Diga oi para mim!",
     subtitle:
-      "Se você deseja entrar em contato comigo, é o meu maior prazer ser digno do seu contato.",
-    paragraph: "Meu e-mail é: rodriigovieira@gmail.com!",
+      "Caso deseje falar comigo, será o meu maior prazer ser digno da sua mensagem.",
+    paragraph: "Meu e-mail é: ",
   },
 
-  blog: {
-    title: "Meu Blog",
-    subtitle:
-      "Você pode encontrar todas as coisas que eu adoro falar sobre aqui.",
-  },
-
-  about: {
+  portfolio: {
     title: "Eu sou Rodrigo.",
     subtitle:
-      "Adoro fazer coisas. Especialmente quando essas coisas são aplicações mobile ou web",
+      "Abaixo você pode encontrar um pequeno pedaço das coisas que já fiz.",
   },
 
   page404: {
@@ -72,14 +78,13 @@ const textLabelsPt = {
 
   footer: {
     text:
-      "© Criado por Rodrigo Vieira, 2019. Construído com o framework Gatsby.",
+      "Construído com o framework Gatsby. O código-fonte está disponível em meu Github.",
   },
 
   header: {
-    homepage: "Página Inicial",
-    about: "Sobre",
+    homepage: "Início",
+    portfolio: "Portfólio",
     contact: "Contato",
-    blog: "Blog",
   },
 }
 
