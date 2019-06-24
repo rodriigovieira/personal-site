@@ -71,7 +71,7 @@ const Footer = () => {
               color: language === "pt" && "#333333",
             }}
           >
-            Português
+            PT
           </span>
           <span
             onClick={handleEnglish}
@@ -80,7 +80,7 @@ const Footer = () => {
               color: language === "en" && "#333333",
             }}
           >
-            English
+            EN
           </span>
         </div>
       </div>
