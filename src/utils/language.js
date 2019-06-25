@@ -22,8 +22,16 @@ const textLabelsEn = {
 
   portfolio: {
     title: "I am Rodrigo.",
-    subtitle:
-      "Bellow you can find a small piece of what I already did.",
+    subtitle: "Bellow you can find a small piece of what I already did.",
+    details: "Detalhes",
+    technologies: "Technologies",
+    projects: {
+      bestclean: {
+        summary: "BestClean - complete cross-platform application.",
+        description:
+          "Application for an industrial laundry made to assist in all tasks related to the company's organization. \n Clients can track their packages and see in which exact stage their package is, and the staff can also easily manage internally all the active orders, reducing to almost 0 the use of paper.",
+      },
+    },
   },
 
   page404: {
@@ -69,6 +77,15 @@ const textLabelsPt = {
     title: "Eu sou Rodrigo.",
     subtitle:
       "Abaixo você pode encontrar um pequeno pedaço das coisas que já fiz.",
+    details: "Detalhes",
+    technologies: "Tecnologias",
+    projects: {
+      bestclean: {
+        summary: "BestClean - aplicação multi-plataforma completa.",
+        description:
+          "Aplicativo feito para uma lavanderia industrial que facilita no gerenciamento interno da companhia, possibilitando que clientes possam verificar a situação do seu pedido e em que estado ele se encontra, além de permitir que a equipe possa gerenciar pedidos internamente, reduzindo a quase 0 o uso de papéis.",
+      },
+    },
   },
 
   page404: {

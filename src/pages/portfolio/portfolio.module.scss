@@ -1,0 +1,25 @@
+.portfolioContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+  justify-content: center;
+}
+
+.portfolioItem {
+  flex: 1 1 calc(50% - 50px);
+  min-width: 300px;
+  text-align: center;
+  max-width: 400px;
+
+  p {
+    color: black;
+  }
+}
+
+.linkStyle {
+  text-decoration: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
