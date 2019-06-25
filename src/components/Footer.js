@@ -8,7 +8,12 @@ const Footer = () => {
 
   const text = getLanguages(language)
 
-  return <span>{text.footer.text}</span>
+  return (
+    <span>
+      {text.footer.text}{" "}
+      <a href="https://github.com/rodriigovieira/personal-site">Github</a>.
+    </span>
+  )
 }
 
 export default Footer

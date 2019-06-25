@@ -23,7 +23,7 @@ const textLabelsEn = {
   portfolio: {
     title: "I am Rodrigo.",
     subtitle: "Bellow you can find a small piece of what I already did.",
-    details: "Detalhes",
+    details: "Details",
     technologies: "Technologies",
     projects: {
       bestclean: {
@@ -41,7 +41,7 @@ const textLabelsEn = {
 
   footer: {
     text:
-      "Website built with the Gatsby framework. The source code is available in my Github.",
+      "Website built with the Gatsby framework. The source code is available in my ",
   },
 
   header: {
@@ -95,7 +95,7 @@ const textLabelsPt = {
 
   footer: {
     text:
-      "Construído com o framework Gatsby. O código-fonte está disponível em meu Github.",
+      "Construído com o framework Gatsby. O código-fonte está disponível em meu ",
   },
 
   header: {
