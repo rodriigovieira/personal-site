@@ -10,7 +10,7 @@ import Layout from "../../components/Layout"
 
 const view = ({ location }) => {
   const passedData = location.state || {
-    image: "",
+    image: "https://via.placeholder.com/350",
     project: "",
     title: "",
     playStore: "",
@@ -49,7 +49,7 @@ const view = ({ location }) => {
       <br />
 
       {passedData.playStore && (
-        <div style={{ margin: '0 auto', maxWidth: 200 }}>
+        <div style={{ margin: "0 auto", maxWidth: 200 }}>
           <a href={passedData.playStore}>
             {language === "pt" ? (
               <img src={playStoreBadgePt} alt="Play Store" />

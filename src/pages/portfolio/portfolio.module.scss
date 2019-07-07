@@ -1,15 +1,15 @@
 .portfolioContainer {
   display: flex;
   flex-wrap: wrap;
-  height: 200px;
   justify-content: center;
+  align-items: center;
 }
 
 .portfolioItem {
   flex: 1 1 calc(50% - 50px);
-  min-width: 300px;
+  max-width: 500px;
   text-align: center;
-  max-width: 400px;
+  margin: 20px;
 }
 
 .linkStyle {
