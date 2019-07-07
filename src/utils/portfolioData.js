@@ -14,27 +14,31 @@ const portfolioData = [
       "https://play.google.com/store/apps/details?id=com.lavanderiabestclean.bestclean",
   },
   {
-    title: "MoviesFinder",
-    project: "bestclean",
-    image: ImageMovies,
-    summaryEn: "MoviesFinder - a database with your favorite movies",
-    summaryPt: "MoviesFinder - um espaço com todos seus filmes favoritos",
-  },
-  {
-    title: "BeerFinder",
-    project: "bestclean",
-    image: ImageBeerFinder,
-    summaryEn: "BeerFinder - your beer encyclopedia",
-    summaryPt: "BeerFinder - a enciclopédia para os cervejeiros",
-  },
-  {
     title: "ExpensesTracker",
-    project: "bestclean",
+    project: "expensesTracker",
     image: ImageExpenses,
     summaryEn: "ExpensesTracker - the quick solution for saving money",
     summaryPt: "ExpensesTracker - a simples solução para economizar",
     playStore:
-      "https://play.google.com/store/apps/details?id=com.lavanderiabestclean.bestclean",
+      "https://play.google.com/store/apps/details?id=com.rodrigo.vieira.expensestracker",
+    github: "https://github.com/rodriigovieira/rn-challenge-2",
+  },
+  {
+    title: "MoviesFinder",
+    project: "moviesFinder",
+    image: ImageMovies,
+    summaryEn: "MoviesFinder - a database with your favorite movies",
+    summaryPt: "MoviesFinder - um espaço com todos seus filmes favoritos",
+    github: "https://github.com/rodriigovieira/banco-filmes",
+    site: "https://movies.rodrigorodrigues.dev"
+  },
+  {
+    title: "BeerFinder",
+    project: "beerFinder",
+    image: ImageBeerFinder,
+    summaryEn: "BeerFinder - your beer encyclopedia",
+    summaryPt: "BeerFinder - a enciclopédia para os cervejeiros",
+    github: "https://github.com/rodriigovieira/mobile-teste",
   },
 ]
 

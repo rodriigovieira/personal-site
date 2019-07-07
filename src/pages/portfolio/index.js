@@ -21,19 +21,20 @@ const portfolioIndex = () => {
 
       <div className={styles.portfolioContainer}>
         {portfolioData.map(data => (
-          <Link
-            className={styles.linkStyle}
-            to="/portfolio/view"
-            state={data}
-          >
+          <Link className={styles.linkStyle} to="/portfolio/view" state={data}>
             <div className={styles.portfolioItem}>
               <img src={data.image} alt="BestClean" />
 
-              <p>{language === 'pt' ? data.summaryPt : data.summaryEn}</p>
+              <p>{language === "pt" ? data.summaryPt : data.summaryEn}</p>
             </div>
           </Link>
         ))}
       </div>
+
+      <h5>
+        {text.portfolio.more}
+        <a target="_blank" href="https://github.com/rodriigovieira">Github</a>.
+      </h5>
     </Layout>
   )
 }

@@ -25,11 +25,24 @@ const textLabelsEn = {
     subtitle: "Bellow you can find a small piece of what I already did.",
     details: "Details",
     technologies: "Technologies",
+    website: "Access this project's website",
+    more: "You can find more of my stuff at my ",
     projects: {
       bestclean: {
-        summary: "BestClean - complete cross-platform application.",
         description:
           "Application for an industrial laundry made to assist in all tasks related to the company's organization. \n Clients can track their packages and see in which exact stage their package is, and the staff can also easily manage internally all the active orders, reducing to almost 0 the use of paper.",
+      },
+      beerFinder: {
+        description:
+          "A program that makes uses of a public beer API, the Punk API, and displays the information in various ways. You can either see all beers, search a beer by its ID, or get a random one. Features a complete authentication system with login and signup.",
+      },
+      moviesFinder: {
+        description:
+          "A movies database where you can search all your favorite movies, and then, by clicking on a movie, you'll see all details of this particular movie, such as budget, trailers, dates, etc.",
+      },
+      expensesTracker: {
+        description:
+          "A simple expenses tracking application, which features a complete login system, with login, sign up and password recovery, and where you can log your expenses with just 2 clicks. The idea is: if you log every single expense of your day, you'll become much more aware of your daily expenses.",
       },
     },
   },
@@ -79,11 +92,24 @@ const textLabelsPt = {
       "Abaixo você pode encontrar um pequeno pedaço das coisas que já fiz.",
     details: "Detalhes",
     technologies: "Tecnologias",
+    website: "Acessar site desse projeto",
+    more: "Você pode encontrar mais projetos em meu ",
     projects: {
       bestclean: {
-        summary: "BestClean - aplicação multi-plataforma completa.",
         description:
           "Aplicativo feito para uma lavanderia industrial que facilita no gerenciamento interno da companhia, possibilitando que clientes possam verificar a situação do seu pedido e em que estado ele se encontra, além de permitir que a equipe possa gerenciar pedidos internamente, reduzindo a quase 0 o uso de papéis.",
+      },
+      beerFinder: {
+        description:
+          "Programa que consome uma API pública de cerveja, a Punk API, e mostra esses dados de diversas maneiras. Há a opção de pesquisa aleatória, de pesquisar uma cerveja pelo seu ID, ou de mostrar todas elas. Também possui um sistema de login com autenticação e cadastro.",
+      },
+      moviesFinder: {
+        description:
+          "Uma enciclopédia de filmes, onde você pode pesquisar os seus filmes favoritos e consultar informações sobre eles. Ao selecionar um filme, você verá informações como orçamento, datas, trailer, etc.",
+      },
+      expensesTracker: {
+        description:
+          "Uma aplicação simples para auxiliar no controle financeiro. Possui um sistema de autenticação completo, com login, cadastro e recuperação de senha. Você pode registrar todas as suas despesas diárias com apenas 2 cliques. A ideia é: se você registrar todas as despesas do seu dia, você terá muito mais controle da sua vida financeira.",
       },
     },
   },

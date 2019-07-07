@@ -5,6 +5,7 @@ import getLanguages from "../../utils/language"
 
 import playStoreBadgePt from "../../assets/playStoreBadgePt.png"
 import playStoreBadgeEn from "../../assets/playStoreBadgeEn.png"
+import githubBadge from "../../assets/github_logo.png"
 
 import Layout from "../../components/Layout"
 
@@ -14,6 +15,8 @@ const view = ({ location }) => {
     project: "",
     title: "",
     playStore: "",
+    github: "",
+    site: "",
   }
 
   const language = useSelector(({ language }) => language)
@@ -24,6 +27,12 @@ const view = ({ location }) => {
     switch (passedData.project) {
       case "bestclean":
         return text.portfolio.projects.bestclean
+      case "beerFinder":
+        return text.portfolio.projects.beerFinder
+      case "moviesFinder":
+        return text.portfolio.projects.moviesFinder
+      case "expensesTracker":
+        return text.portfolio.projects.expensesTracker
       default:
         return text.portfolio.projects.bestclean
     }
@@ -48,14 +57,30 @@ const view = ({ location }) => {
       <br />
       <br />
 
+      {passedData.site && (
+        <div style={{ margin: "0 auto" }}>
+          <a target="_blank" href={passedData.site}>
+            {text.portfolio.website}
+          </a>
+        </div>
+      )}
+
       {passedData.playStore && (
         <div style={{ margin: "0 auto", maxWidth: 200 }}>
-          <a href={passedData.playStore}>
+          <a target="_blank" href={passedData.playStore}>
             {language === "pt" ? (
               <img src={playStoreBadgePt} alt="Play Store" />
             ) : (
               <img src={playStoreBadgeEn} alt="Play Store" />
             )}
+          </a>
+        </div>
+      )}
+
+      {passedData.github && (
+        <div style={{ margin: "0 auto", maxWidth: 200 }}>
+          <a target="_blank" href={passedData.github}>
+            <img src={githubBadge} alt="Github" />
           </a>
         </div>
       )}
