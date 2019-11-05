@@ -33,7 +33,10 @@ const portfolioIndex = () => {
 
       <h5>
         {text.portfolio.more}
-        <a target="_blank" href="https://github.com/rodriigovieira">Github</a>.
+        <a target="_blank" href="https://github.com/rodriigovieira">
+          Github
+        </a>
+        .
       </h5>
     </Layout>
   )
