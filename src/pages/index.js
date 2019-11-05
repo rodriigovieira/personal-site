@@ -27,7 +27,7 @@ const IndexPage = () => {
       <h4>{text.index.body.fifth}</h4>
 
       <ul>
-        <li>Flutter <3</li>
+        <li>Flutter</li>
         <li>React Native</li>
         <li>React</li>
         <li>NodeJS</li>
