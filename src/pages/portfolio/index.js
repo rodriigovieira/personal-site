@@ -4,13 +4,13 @@ import { useSelector } from "react-redux"
 import Layout from "../../components/Layout"
 
 import getLanguages from "../../utils/language"
-import portfolioData from "../../utils/portfolioData"
+import { portfolio } from "../../utils/portfolio"
 
 import styles from "./portfolio.module.scss"
 
 import { Link } from "gatsby"
 
-const portfolioIndex = () => {
+const PortofolioIndex = () => {
   const language = useSelector(({ language }) => language)
 
   const text = getLanguages(language)
@@ -20,10 +20,15 @@ const portfolioIndex = () => {
       <h4>{text.portfolio.subtitle}</h4>
 
       <div className={styles.portfolioContainer}>
-        {portfolioData.map(data => (
+        {portfolio.map(data => (
           <Link className={styles.linkStyle} to="/portfolio/view" state={data}>
             <div className={styles.portfolioItem}>
-              <img src={data.image} alt="BestClean" />
+              <img
+                src={data.image}
+                alt={data.title}
+                height={data.project === "bestclean" ? "100%" : "50%"}
+                width={data.project === "bestclean" ? "100%" : "50%"}
+              />
 
               <p>{language === "pt" ? data.summaryPt : data.summaryEn}</p>
             </div>
@@ -42,4 +47,4 @@ const portfolioIndex = () => {
   )
 }
 
-export default portfolioIndex
+export default PortofolioIndex

@@ -3,7 +3,7 @@ const textLabelsEn = {
     subtitle: "Welcome!",
     body: {
       first:
-        "I'm Rodrigo Vieira. A passionate developer, I love to build things, though sometimes not very useful things. From Aracaju, Brazil, currently at Montreal, Canada.",
+        "I'm Rodrigo Vieira. A passionate developer, I love to build things, though sometimes not very useful things. From and currently at Aracaju, Brazil.",
       second:
         "In love with traveling, foodie, calisthenics, and everything else that this world has to offer.",
       third: "What do I do?",
@@ -31,6 +31,17 @@ const textLabelsEn = {
       bestclean: {
         description:
           "Application for an industrial laundry made to assist in all tasks related to the company's organization. \n Clients can track their packages and see in which exact stage their package is, and the staff can also easily manage internally all the active orders, reducing to almost 0 the use of paper.",
+      },
+      ulocal: {
+        description: `Ulocal helps find restaurants offering local produce, microbreweries, artisans, vineyards or local designers and more.
+        \n
+        Ulocal is there for people who travel and want to quickly locate companies with local products wherever they are. Whether in unknown regions, in everyday life, as a tourist. Ulocal promotes local and ecological diversity.`
+      },
+      rewardMeNow: {
+        description: "Reward Me Now offers employers the ability to give their staff incredible perks. You can reward your employees for their hard work and help their wages go further."
+      },
+      i4fit: {
+        description: "i4fit was developed to end the traditional paper training sheet in the gym. It manages the workout of studends of dozens of gyms across Brazil. It integrtes the services provided by iFitness."
       },
       beerFinder: {
         description:
@@ -69,7 +80,7 @@ const textLabelsPt = {
     subtitle: "Bem-vindo!",
     body: {
       first:
-        "Eu me chamo Rodrigo Vieira. Sou um programador apaixonado, adoro construir coisas, nem sempre tão úteis. De Aracaju, agora estou em Montreal, Canadá.",
+        "Eu me chamo Rodrigo Vieira. Sou um programador apaixonado, adoro construir coisas, nem sempre tão úteis. Natural e residente de Aracaju.",
       second:
         "Apaixonado por viagens, por comida(s), calistenia e tudo que esse mundo tem a oferecer.",
       third: "O que eu faço?",
@@ -98,6 +109,15 @@ const textLabelsPt = {
       bestclean: {
         description:
           "Aplicativo feito para uma lavanderia industrial que facilita no gerenciamento interno da companhia, possibilitando que clientes possam verificar a situação do seu pedido e em que estado ele se encontra, além de permitir que a equipe possa gerenciar pedidos internamente, reduzindo a quase 0 o uso de papéis.",
+      },
+      ulocal: {
+        description: `Ulocal oferece uma experiência turística e local diferenciada mostrando todas as empresas feitas com produtos locais ao seu redor. Atualmente mais de 4500 empresas de vários países já estão cadastradas.`
+      },
+      rewardMeNow: {
+        description: "Reward Me Now é um aplicativo que permite você oferecer recompensas a funcionários de sua empresa. Centenae empresa do Reino Unido já estão cadastradas nesse aplicativo.."
+      },
+      i4fit: {
+        description: "i4Fit foi desenvolvido para acabar com a ficha de papel na academia. Agora você poderá ter os seus treinos direto no seu celular ou tablet.",
       },
       beerFinder: {
         description:
