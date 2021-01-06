@@ -22,19 +22,17 @@ const PortofolioIndex = () => {
       <div className={styles.portfolioContainer}>
         {portfolio.map(data => (
           <>
-            <p>{language === "pt" ? data.summaryPt : data.summaryEn}</p>
+            <div className={styles.portfolioItem}>
+              <Link className={styles.linkStyle} to="/portfolio/view" state={data}>
+                  <img
+                    src={data.image}
+                    alt={data.title}
+                    width={data.project === "bestclean" ? "100%" : "30%"}
+                  />
+              </Link>
+              <p>{data?.title}</p>
 
-            <Link className={styles.linkStyle} to="/portfolio/view" state={data}>
-              <div className={styles.portfolioItem}>
-                <img
-                  src={data.image}
-                  alt={data.title}
-                  height={data.project === "bestclean" ? "100%" : "50%"}
-                  width={data.project === "bestclean" ? "100%" : "50%"}
-                />
-
-              </div>
-            </Link>
+            </div>
           </>
         ))}
       </div>
