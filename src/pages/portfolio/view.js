@@ -5,6 +5,8 @@ import getLanguages from "../../utils/language"
 
 import playStoreBadgePt from "../../assets/playStoreBadgePt.png"
 import playStoreBadgeEn from "../../assets/playStoreBadgeEn.png"
+import appStoreBadgePt from "../../assets/app_store_badge_pt.png"
+import appStoreBadgeEn from "../../assets/app_store_badge_en.png"
 import githubBadge from "../../assets/github_logo.png"
 
 import Layout from "../../components/Layout"
@@ -16,6 +18,7 @@ const DefaultPassedData = {
   playStore: "",
   github: "",
   site: "",
+  appStore: "",
 }
 
 const View = ({ location }) => {
@@ -55,11 +58,23 @@ const View = ({ location }) => {
 
       {passedData?.playStore && (
         <div style={{ margin: "0 auto", maxWidth: 200 }}>
-          <a target="_blank" href={passedData.playStore}>
+          <a target="_blank" href={passedData?.playStore}>
             {language === "pt" ? (
-              <img src={playStoreBadgePt} alt="Play Store" />
+              <img width={500} src={playStoreBadgePt} alt="Play Store" />
             ) : (
-              <img src={playStoreBadgeEn} alt="Play Store" />
+              <img width={500} src={playStoreBadgeEn} alt="Play Store" />
+            )}
+          </a>
+        </div>
+      )}
+
+      {passedData?.appStore && (
+        <div style={{ margin: "0 auto", maxWidth: 200 }}>
+          <a target="_blank" href={passedData?.appStore}>
+            {language === "pt" ? (
+              <img width={450} src={appStoreBadgePt} alt="App Store" />
+            ) : (
+              <img width={450} src={appStoreBadgeEn} alt="App Store" />
             )}
           </a>
         </div>
