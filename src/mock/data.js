@@ -31,12 +31,14 @@ export const aboutData = {
 export const projectsData = [
   {
     id: nanoid(),
-    img: 'ulocal.png',
+    img: 'ulocal.jpg',
     title: 'Ulocal',
     info:
       'Ulocal helps find restaurants offering local produce, microbreweries, artisans, vineyards or local designers and more. Ulocal is there for people who travel and want to quickly locate companies with local products wherever they are. Whether in unknown regions, in everyday life, as a tourist. Ulocal promotes local and ecological diversity.',
     info2: 'Lead Developer - developed with Flutter.',
     url: 'https://ulocal.co',
+    playStore: 'https://play.google.com/store/apps/details?id=co.ulocal&hl=en&gl=US',
+    appStore: 'https://apps.apple.com/ca/app/ulocal-local-products/id1468266437',
   },
   {
     id: nanoid(),
@@ -47,15 +49,19 @@ export const projectsData = [
     info2:
       'Developer - Developed with React Native, plus several custom modifications made in Swift and Java.',
     url: 'https://www.rewardmenow.co.uk',
+    appStore: 'https://apps.apple.com/gb/app/reward-me-now/id1289615311',
+    playStore: 'https://play.google.com/store/apps/details?id=com.redu.Ashleigh&hl=en&gl=US',
   },
   {
     id: nanoid(),
-    img: 'i4fit.png',
+    img: 'i4fit.jpg',
     title: 'i4fit',
     info:
       'i4fit was developed to end the traditional paper training sheet in the gym. It manages the workout of studends of dozens of gyms across Brazil. It integrtes the services provided by iFitness.',
     info2: 'Lead Developer - developed for IntegraFácil, with React Native.',
     url: '',
+    playStore: 'https://play.google.com/store/apps/details?id=br.com.ifitness.i4fit&hl=pt_BR',
+    appStore: 'https://apps.apple.com/br/app/i4fit/id1148668798',
   },
   {
     id: nanoid(),
@@ -65,6 +71,8 @@ export const projectsData = [
       "Application for an industrial laundry made to assist in all tasks related to the company's organization. Clients can track their packages and see in which exact stage their package is, and the staff can also easily manage internally all the active orders, reducing to almost 0 the use of paper.",
     info2: 'Lead Developer - developed with React, Node and Flutter.',
     url: '',
+    playStore:
+      'https://play.google.com/store/apps/details?id=com.lavanderiabestclean.bestclean&hl=pt&gl=US',
   },
 ];
 

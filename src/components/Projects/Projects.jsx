@@ -5,6 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
 import ProjectImg from '../Image/ProjectImg';
+import appStoreImageEn from '../../images/app_store_badge_en.png';
+import playStoreImageEn from '../../images/play_store_badge_en.png';
 
 const Projects = () => {
   const { projects } = useContext(PortfolioContext);
@@ -28,7 +30,7 @@ const Projects = () => {
         <div className="project-wrapper">
           <Title title="Projects" />
           {projects.map((project) => {
-            const { title, info, info2, url, repo, img, id } = project;
+            const { title, info, info2, url, repo, img, id, appStore, playStore } = project;
 
             return (
               <Row key={id}>
@@ -70,13 +72,37 @@ const Projects = () => {
                           Source Code
                         </a>
                       )}
+
+                      {appStore && (
+                        <>
+                          <br />
+                          <a target="_blank" rel="noopener noreferrer" href={appStore}>
+                            <img
+                              style={{ marginTop: 15, height: 45 }}
+                              src={appStoreImageEn}
+                              alt="App Store"
+                            />
+                          </a>
+                        </>
+                      )}
+
+                      {playStore && (
+                        <>
+                          <br />
+                          <a target="_blank" rel="noopener noreferrer" href={playStore}>
+                            <img
+                              style={{ marginTop: 15, height: 45 }}
+                              src={playStoreImageEn}
+                              alt="Play Store"
+                            />
+                          </a>
+                        </>
+                      )}
                     </div>
                   </Fade>
                 </Col>
 
-                {img !== 'bestclean.png' && <Col lg={2} />}
-
-                <Col lg={img === 'bestclean.png' ? 8 : 3} sm={12}>
+                <Col lg={8} sm={12}>
                   <Fade
                     right={isDesktop}
                     bottom={isMobile}
@@ -105,8 +131,6 @@ const Projects = () => {
                     </div>
                   </Fade>
                 </Col>
-
-                {img !== 'bestclean.png' && <Col lg={2} />}
               </Row>
             );
           })}
