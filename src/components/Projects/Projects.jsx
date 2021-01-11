@@ -49,14 +49,16 @@ const Projects = () => {
                         </p>
                         <p className="mb-4">{info2 || ''}</p>
                       </div>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cta-btn cta-btn--hero"
-                        href={url || '#!'}
-                      >
-                        See Live
-                      </a>
+                      {url && (
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cta-btn cta-btn--hero"
+                          href={url || '#!'}
+                        >
+                          Website
+                        </a>
+                      )}
 
                       {repo && (
                         <a
@@ -71,7 +73,10 @@ const Projects = () => {
                     </div>
                   </Fade>
                 </Col>
-                <Col lg={8} sm={12}>
+
+                {img !== 'bestclean.png' && <Col lg={2} />}
+
+                <Col lg={img === 'bestclean.png' ? 8 : 3} sm={12}>
                   <Fade
                     right={isDesktop}
                     bottom={isMobile}
@@ -107,6 +112,8 @@ const Projects = () => {
                     </div>
                   </Fade>
                 </Col>
+
+                {img !== 'bestclean.png' && <Col lg={2} />}
               </Row>
             );
           })}
