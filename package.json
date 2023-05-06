@@ -13,7 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "gatsby": "^2.9.4",
+    "gatsby": "^5.9.0",
     "gatsby-optional-chaining": "^1.0.1",
     "gatsby-plugin-netlify": "^2.0.17",
     "gatsby-plugin-react-helmet": "^3.0.12",
