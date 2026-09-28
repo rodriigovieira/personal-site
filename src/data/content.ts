@@ -25,7 +25,7 @@ export interface Project {
 
 export const profile = {
   name: "Rodrigo Rodrigues",
-  email: "rodriigovieira@gmail.com",
+  email: "hello@rodrigorodrigues.dev",
   linkedin: "https://www.linkedin.com/in/rodriigovieira/",
   github: "https://github.com/rodriigovieira",
 }
