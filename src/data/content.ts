@@ -44,7 +44,7 @@ export const projects: Project[] = [
       pt: "Mesas, comandas, cozinha, delivery e pedidos pelo WhatsApp em um só produto — e continua funcionando quando a internet cai. Projetado, construído e operado de ponta a ponta: apps, painel web, backend, serviço de impressão e site.",
     },
     role: { en: "Lead Engineer", pt: "Engenheiro líder" },
-    stack: ["React Native", "Flutter", "React", "Convex", "Node.js", "Electron"],
+    stack: ["Flutter", "React", "Convex", "Node.js", "Electron"],
     links: {
       web: "https://www.pandapdv.com.br",
       appStore: "https://apps.apple.com/br/app/pandapdv-gest%C3%A3o-completa/id6758158610",
@@ -125,11 +125,11 @@ export const projects: Project[] = [
       pt: "App e site de pedidos para um restaurante de sushi em Florianópolis.",
     },
     description: {
-      en: "Customers browse the menu, customise dishes, pay with Pix or card and follow their order from the kitchen to the door — for delivery or pickup. Built as a white-label Flutter app on the PandaPDV platform, which also runs the restaurant's online ordering site.",
-      pt: "O cliente navega pelo cardápio, personaliza os pratos, paga com Pix ou cartão e acompanha o pedido da cozinha até a porta — para entrega ou retirada. Construído como app Flutter white-label sobre a plataforma PandaPDV, que também roda o site de pedidos do restaurante.",
+      en: "Customers browse the menu, customise dishes, pay with Pix or card and follow their order from the kitchen to the door — for delivery or pickup. Built in Flutter, together with the restaurant's online ordering site.",
+      pt: "O cliente navega pelo cardápio, personaliza os pratos, paga com Pix ou cartão e acompanha o pedido da cozinha até a porta — para entrega ou retirada. Construído em Flutter, junto com o site de pedidos do restaurante.",
     },
     role: { en: "Lead Engineer", pt: "Engenheiro líder" },
-    stack: ["Flutter", "Firebase", "PandaPDV platform"],
+    stack: ["Flutter", "Firebase"],
     links: {
       web: "https://www.tatsuki.com.br",
       appStore: "https://apps.apple.com/br/app/tatsuki-floripa/id6475375304",
