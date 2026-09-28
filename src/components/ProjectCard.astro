@@ -11,7 +11,8 @@ const { project, lang } = Astro.props
 const t = copy[lang]
 const web = project.links.web
 const domain = web ? new URL(web).hostname.replace(/^www\./, "") : undefined
-const shots = Array.from({ length: project.shots }, (_, i) => `/img/${project.id}-${i}.webp`)
+const [shotWidth, shotHeight] = project.shotSize
+const shots = [0, 1, 2].map((i) => `/img/${project.id}-${i}.webp`)
 ---
 
 <article class="card">
@@ -34,7 +35,7 @@ const shots = Array.from({ length: project.shots }, (_, i) => `/img/${project.id
 
   <div class="shots" aria-label={`${project.name} ${t.screenshots}`}>
     {shots.map((src, i) => (
-      <img src={src} alt={`${project.name} — ${t.screenshots} ${i + 1}`} width="196" height="425" loading="lazy" decoding="async" />
+      <img src={src} alt={`${project.name} — ${t.screenshots} ${i + 1}`} width={shotWidth} height={shotHeight} loading="lazy" decoding="async" />
     ))}
   </div>
 
@@ -147,9 +148,6 @@ const shots = Array.from({ length: project.shots }, (_, i) => `/img/${project.id
   .shots img {
     width: 100%;
     height: auto;
-    aspect-ratio: 196 / 425;
-    object-fit: cover;
-    object-position: top;
     border-radius: 12px;
     border: 1px solid var(--line);
     background: var(--chip);

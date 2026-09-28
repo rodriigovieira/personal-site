@@ -18,7 +18,8 @@ export interface Project {
   role: Text
   stack: string[]
   links: Links
-  shots: number
+  /** Natural size of the store screenshots, so the frame never crops them. */
+  shotSize: [number, number]
   badge?: Text
 }
 
@@ -42,14 +43,14 @@ export const projects: Project[] = [
       en: "Tables, orders, kitchen tickets, delivery and WhatsApp ordering in one product — and it keeps working when the internet drops. Designed, built and operated end to end: mobile apps, web admin, backend, printing service and landing page.",
       pt: "Mesas, comandas, cozinha, delivery e pedidos pelo WhatsApp em um só produto — e continua funcionando quando a internet cai. Projetado, construído e operado de ponta a ponta: apps, painel web, backend, serviço de impressão e site.",
     },
-    role: { en: "Founder & sole engineer", pt: "Fundador e único engenheiro" },
+    role: { en: "Lead Engineer", pt: "Engenheiro líder" },
     stack: ["React Native", "Flutter", "React", "Convex", "Node.js", "Electron"],
     links: {
       web: "https://www.pandapdv.com.br",
       appStore: "https://apps.apple.com/br/app/pandapdv-gest%C3%A3o-completa/id6758158610",
       playStore: "https://play.google.com/store/apps/details?id=com.br.pandapdv",
     },
-    shots: 3,
+    shotSize: [392, 848],
   },
   {
     id: "qeepsake",
@@ -60,17 +61,39 @@ export const projects: Project[] = [
       pt: "O diário de fotos da família que apareceu no Shark Tank.",
     },
     description: {
-      en: "Owned the React Native app and the Next.js web project. Rebuilt the mobile release pipeline on EAS, and worked directly with the CEO, product and marketing to plan and ship.",
-      pt: "Responsável pelo app React Native e pelo projeto web em Next.js. Reconstruí o pipeline de publicação mobile com EAS e trabalhei direto com CEO, produto e marketing.",
+      en: "Owned both sides of the product: the Next.js web app and the React Native apps for iOS and Android. Rebuilt the mobile release pipeline on EAS, and worked directly with the CEO, product and marketing to plan and ship.",
+      pt: "Responsável pelos dois lados do produto: o web app em Next.js e os apps React Native para iOS e Android. Reconstruí o pipeline de publicação mobile com EAS e trabalhei direto com CEO, produto e marketing.",
     },
-    role: { en: "Senior Software Engineer · 2023–2024", pt: "Engenheiro de Software Sênior · 2023–2024" },
-    stack: ["React Native", "Expo / EAS", "Next.js", "TypeScript"],
+    role: { en: "Senior Software Engineer", pt: "Engenheiro de Software Sênior" },
+    stack: ["Next.js", "React", "React Native", "Expo / EAS", "TypeScript"],
     links: {
-      appStore: "https://apps.apple.com/us/app/qeepsake-family-photo-album/id1332312787",
       web: "https://qeepsake.com",
+      appStore: "https://apps.apple.com/us/app/qeepsake-family-photo-album/id1332312787",
+      playStore: "https://play.google.com/store/apps/details?id=co.qeepsake.qeepsakeApp",
     },
-    shots: 3,
+    shotSize: [392, 697],
     badge: { en: "4.9★ · 14k+ ratings", pt: "4,9★ · 14 mil+ avaliações" },
+  },
+  {
+    id: "myfi",
+    name: "MyFi",
+    kind: { en: "Social trading · iOS, Android, Web", pt: "Trading social · iOS, Android, Web" },
+    tagline: {
+      en: "A social trading app where investors share ideas and track their performance.",
+      pt: "App de trading social onde investidores compartilham ideias e acompanham seu desempenho.",
+    },
+    description: {
+      en: "Built the product end to end for a Canadian startup: the iOS and Android apps in Expo / React Native, the Next.js admin portal and the landing page, on a Supabase backend with live market data.",
+      pt: "Construí o produto de ponta a ponta para uma startup canadense: os apps iOS e Android em Expo / React Native, o painel administrativo em Next.js e a landing page, sobre um backend Supabase com dados de mercado em tempo real.",
+    },
+    role: { en: "Lead Engineer", pt: "Engenheiro líder" },
+    stack: ["React Native", "Expo", "Next.js", "Supabase", "TypeScript"],
+    links: {
+      web: "https://www.myfistocks.com",
+      appStore: "https://apps.apple.com/us/app/myfi-social-trading/id6756648010",
+      playStore: "https://play.google.com/store/apps/details?id=com.myfistocks",
+    },
+    shotSize: [392, 848],
   },
   {
     id: "avodahmed",
@@ -84,34 +107,35 @@ export const projects: Project[] = [
       en: "Maintained and extended the React Native app and contributed to the Next.js products, with tRPC and Drizzle on the backend and automated releases with fastlane.",
       pt: "Mantive e evoluí o app React Native e contribuí nos produtos Next.js, com tRPC e Drizzle no backend e publicação automatizada com fastlane.",
     },
-    role: { en: "Senior Software Engineer · 2025–2026", pt: "Engenheiro de Software Sênior · 2025–2026" },
+    role: { en: "Senior Software Engineer", pt: "Engenheiro de Software Sênior" },
     stack: ["React Native", "Next.js", "tRPC", "Drizzle", "fastlane"],
     links: {
       appStore: "https://apps.apple.com/us/app/avodahmed/id6740938902",
       playStore: "https://play.google.com/store/apps/details?id=com.avodahmed.nsight.app",
       web: "https://www.avodah.com/med",
     },
-    shots: 3,
+    shotSize: [392, 852],
   },
   {
-    id: "kipizza",
-    name: "KiPizza Aracaju",
-    kind: { en: "Food ordering · iOS, Android", pt: "Delivery · iOS, Android" },
+    id: "tatsuki",
+    name: "Tatsuki Sushi House",
+    kind: { en: "Food ordering · iOS, Android, Web", pt: "Delivery · iOS, Android, Web" },
     tagline: {
-      en: "Online ordering app for a pizzeria in Aracaju.",
-      pt: "App de pedidos online para uma pizzaria em Aracaju.",
+      en: "Ordering app and website for a sushi restaurant in Florianópolis.",
+      pt: "App e site de pedidos para um restaurante de sushi em Florianópolis.",
     },
     description: {
-      en: "Full menu with 30+ flavours, half-and-half pizzas, cart, delivery and order tracking — backed by the same platform that became PandaPDV. Rated 5★ on the App Store.",
-      pt: "Cardápio completo com mais de 30 sabores, pizzas meio a meio, carrinho, delivery e acompanhamento do pedido — sobre a mesma plataforma que virou o PandaPDV. Nota 5★ na App Store.",
+      en: "Customers browse the menu, customise dishes, pay with Pix or card and follow their order from the kitchen to the door — for delivery or pickup. Built as a white-label Flutter app on the PandaPDV platform, which also runs the restaurant's online ordering site.",
+      pt: "O cliente navega pelo cardápio, personaliza os pratos, paga com Pix ou cartão e acompanha o pedido da cozinha até a porta — para entrega ou retirada. Construído como app Flutter white-label sobre a plataforma PandaPDV, que também roda o site de pedidos do restaurante.",
     },
-    role: { en: "Designed, built & published", pt: "Projetado, construído e publicado" },
-    stack: ["React Native", "Firebase", "Node.js"],
+    role: { en: "Lead Engineer", pt: "Engenheiro líder" },
+    stack: ["Flutter", "Firebase", "PandaPDV platform"],
     links: {
-      appStore: "https://apps.apple.com/br/app/kipizza-aracaju/id6449227757",
-      playStore: "https://play.google.com/store/apps/details?id=com.kipizza",
+      web: "https://www.tatsuki.com.br",
+      appStore: "https://apps.apple.com/br/app/tatsuki-floripa/id6475375304",
+      playStore: "https://play.google.com/store/apps/details?id=br.com.tatsuki",
     },
-    shots: 3,
+    shotSize: [392, 697],
   },
   {
     id: "tvl",
@@ -125,13 +149,13 @@ export const projects: Project[] = [
       en: "Built new features for the React Native app and a Next.js admin dashboard so the team could manage content and users.",
       pt: "Desenvolvi novas funcionalidades no app React Native e um painel administrativo em Next.js para a equipe gerenciar conteúdo e usuários.",
     },
-    role: { en: "Senior Software Engineer · 2024–2025", pt: "Engenheiro de Software Sênior · 2024–2025" },
+    role: { en: "Senior Software Engineer", pt: "Engenheiro de Software Sênior" },
     stack: ["React Native", "Next.js", "TypeScript"],
     links: {
       appStore: "https://apps.apple.com/us/app/tvl/id945256287",
       web: "https://www.thevoicelibrary.net",
     },
-    shots: 3,
+    shotSize: [392, 697],
   },
   {
     id: "rewardmenow",
@@ -151,7 +175,7 @@ export const projects: Project[] = [
       appStore: "https://apps.apple.com/gb/app/reward-me-now/id1289615311",
       playStore: "https://play.google.com/store/apps/details?id=com.redu.Ashleigh",
     },
-    shots: 3,
+    shotSize: [392, 697],
   },
 ]
 
@@ -260,29 +284,25 @@ export const copy = {
     htmlLang: "en",
     title: "Rodrigo Vieira — Senior Mobile & Full-stack Engineer",
     description:
-      "Senior software engineer building React Native and Next.js apps that ship to the App Store and Google Play. Available for freelance and contract work.",
+      "Senior software engineer building React Native and Next.js apps that ship to the App Store and Google Play.",
     nav: { work: "Work", experience: "Experience", contact: "Contact" },
     switchLabel: "Português",
     switchHref: "/pt/",
     role: "Senior Software Engineer",
-    location: "Florianópolis, Brazil · working remotely with teams in the US, UK and Brazil",
     headline: "I build mobile and web apps that people actually use.",
     intro:
       "React Native, Next.js and Node. For 7 years I've taken apps from first commit to the App Store and Google Play — for startups, for teams of hundreds, and for my own products.",
     ctaPrimary: "Start a project",
     ctaSecondary: "See the apps",
-    available: "Available for new projects",
     stats: [
       { value: "5M+", label: "users on the largest app I've worked on" },
       { value: "4.9★", label: "Qeepsake, 14k+ App Store ratings" },
-      { value: "6", label: "live apps on the stores, below" },
+      { value: "7", label: "live apps on the stores, below" },
     ],
     projectsTitle: "Projects",
     projectsLead: "Apps I've built and shipped — all live today. Tap through to the store or the product's site.",
     experienceTitle: "Experience",
     stackTitle: "What I work with",
-    earlier:
-      "Earlier: BestClean (laundry operations), Ulocal (local-business discovery), i4fit (gym workouts, used by dozens of gyms in Brazil).",
     contactTitle: "Let's build something",
     contactLead:
       "Tell me what you're building and where it's stuck. I usually reply within a day.",
@@ -296,29 +316,25 @@ export const copy = {
     htmlLang: "pt-BR",
     title: "Rodrigo Vieira — Engenheiro Mobile e Full-stack Sênior",
     description:
-      "Engenheiro de software sênior que cria apps em React Native e Next.js publicados na App Store e Google Play. Disponível para projetos freelance.",
+      "Engenheiro de software sênior que cria apps em React Native e Next.js publicados na App Store e Google Play.",
     nav: { work: "Trabalhos", experience: "Experiência", contact: "Contato" },
     switchLabel: "English",
     switchHref: "/",
     role: "Engenheiro de Software Sênior",
-    location: "Florianópolis, Brasil · trabalhando remoto com times dos EUA, Reino Unido e Brasil",
     headline: "Eu construo apps mobile e web que as pessoas realmente usam.",
     intro:
       "React Native, Next.js e Node. Há 7 anos levo apps do primeiro commit até a App Store e o Google Play — para startups, para times de centenas de pessoas e para os meus próprios produtos.",
     ctaPrimary: "Começar um projeto",
     ctaSecondary: "Ver os apps",
-    available: "Disponível para novos projetos",
     stats: [
       { value: "5M+", label: "usuários no maior app em que trabalhei" },
       { value: "4,9★", label: "Qeepsake, 14 mil+ avaliações na App Store" },
-      { value: "6", label: "apps publicados nas lojas, abaixo" },
+      { value: "7", label: "apps publicados nas lojas, abaixo" },
     ],
     projectsTitle: "Projetos",
     projectsLead: "Apps que construí e publiquei — todos no ar hoje. Acesse a loja ou o site de cada produto.",
     experienceTitle: "Experiência",
     stackTitle: "Com o que eu trabalho",
-    earlier:
-      "Antes: BestClean (gestão de lavanderia), Ulocal (descoberta de negócios locais), i4fit (treinos de academia, usado por dezenas de academias no Brasil).",
     contactTitle: "Vamos construir algo",
     contactLead:
       "Me conte o que você está construindo e onde travou. Costumo responder em até um dia.",
