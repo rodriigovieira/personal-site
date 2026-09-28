@@ -24,7 +24,7 @@ export interface Project {
 }
 
 export const profile = {
-  name: "Rodrigo Vieira",
+  name: "Rodrigo Rodrigues",
   email: "rodriigovieira@gmail.com",
   linkedin: "https://www.linkedin.com/in/rodriigovieira/",
   github: "https://github.com/rodriigovieira",
@@ -282,7 +282,7 @@ export const stack = [
 export const copy = {
   en: {
     htmlLang: "en",
-    title: "Rodrigo Vieira — Senior Mobile & Full-stack Engineer",
+    title: "Rodrigo Rodrigues — Senior Mobile & Full-stack Engineer",
     description:
       "Senior software engineer building React Native and Next.js apps that ship to the App Store and Google Play.",
     nav: { work: "Work", experience: "Experience", contact: "Contact" },
@@ -314,7 +314,7 @@ export const copy = {
   },
   pt: {
     htmlLang: "pt-BR",
-    title: "Rodrigo Vieira — Engenheiro Mobile e Full-stack Sênior",
+    title: "Rodrigo Rodrigues — Engenheiro Mobile e Full-stack Sênior",
     description:
       "Engenheiro de software sênior que cria apps em React Native e Next.js publicados na App Store e Google Play.",
     nav: { work: "Trabalhos", experience: "Experiência", contact: "Contato" },

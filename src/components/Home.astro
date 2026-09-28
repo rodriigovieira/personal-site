@@ -15,7 +15,7 @@ const mailto = `mailto:${profile.email}`
 <Base lang={lang}>
   <div class="wrap">
     <nav class="top">
-      <a class="brand" href={lang === "pt" ? "/pt/" : "/"}>Rodrigo Vieira</a>
+      <a class="brand" href={lang === "pt" ? "/pt/" : "/"}>{profile.name}</a>
       <div class="nav-links">
         <a href="#work">{t.nav.work}</a>
         <a href="#experience">{t.nav.experience}</a>
@@ -26,7 +26,7 @@ const mailto = `mailto:${profile.email}`
 
     <header class="hero">
       <div class="who">
-        <img class="avatar" src="/img/avatar.webp" alt="Rodrigo Vieira" width="88" height="88" />
+        <img class="avatar" src="/img/avatar.webp" alt={profile.name} width="88" height="88" />
         <div>
           <p class="role">{t.role}</p>
         </div>
@@ -109,7 +109,7 @@ const mailto = `mailto:${profile.email}`
     </main>
 
     <footer>
-      <span>© {new Date().getFullYear()} Rodrigo Vieira</span>
+      <span>© {new Date().getFullYear()} {profile.name}</span>
       <span>{t.footer} <a href="https://github.com/rodriigovieira/personal-site" target="_blank" rel="noopener">GitHub</a>.</span>
     </footer>
   </div>

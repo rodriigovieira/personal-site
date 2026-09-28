@@ -1,6 +1,6 @@
 # rodrigorodrigues.dev
 
-Personal site and portfolio of Rodrigo Vieira. Static [Astro](https://astro.build) site, English at `/` and Portuguese at `/pt/`.
+Personal site and portfolio of Rodrigo Rodrigues. Static [Astro](https://astro.build) site, English at `/` and Portuguese at `/pt/`.
 
 ```sh
 npm install
