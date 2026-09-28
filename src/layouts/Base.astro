@@ -1,0 +1,113 @@
+---
+import { copy, profile, type Lang } from "../data/content"
+
+interface Props {
+  lang: Lang
+  title?: string
+}
+
+const { lang, title } = Astro.props
+const t = copy[lang]
+const site = Astro.site!
+const canonical = new URL(Astro.url.pathname, site).href
+const pageTitle = title ?? t.title
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: t.role,
+  email: `mailto:${profile.email}`,
+  url: site.href,
+  image: new URL("/img/avatar.webp", site).href,
+  address: { "@type": "PostalAddress", addressLocality: "Florianópolis", addressCountry: "BR" },
+  sameAs: [profile.linkedin, profile.github],
+}
+---
+
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={t.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL("/", site).href} />
+    <link rel="alternate" hreflang="pt-BR" href={new URL("/pt/", site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL("/", site).href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL("/og.png", site).href} />
+    <meta property="og:locale" content={lang === "pt" ? "pt_BR" : "en_US"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --ink: #161614;
+    --muted: #5c5a55;
+    --line: #e4e0d7;
+    --chip: #f0ede6;
+    --accent: #1f6feb;
+    --accent-ink: #1a56b8;
+    --accent-soft: #e3edfd;
+    --ok: #1a7f37;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111110;
+      --surface: #1a1a18;
+      --ink: #f2f0ea;
+      --muted: #a8a59d;
+      --line: #2c2b28;
+      --chip: #24231f;
+      --accent: #5b9bff;
+      --accent-ink: #8ab8ff;
+      --accent-soft: #1b2a44;
+      --ok: #3fb950;
+    }
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: inherit;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>

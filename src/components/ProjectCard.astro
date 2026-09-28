@@ -1,0 +1,182 @@
+---
+import type { Lang, Project } from "../data/content"
+import { copy } from "../data/content"
+
+interface Props {
+  project: Project
+  lang: Lang
+}
+
+const { project, lang } = Astro.props
+const t = copy[lang]
+const shots = Array.from({ length: project.shots }, (_, i) => `/img/${project.id}-${i}.webp`)
+---
+
+<article class="card">
+  <header class="card-head">
+    <img class="icon" src={`/img/${project.id}-icon.webp`} alt="" width="64" height="64" loading="lazy" />
+    <div>
+      <h3>{project.name}</h3>
+      <p class="kind">{project.kind[lang]}</p>
+    </div>
+    {project.badge && <span class="badge">{project.badge[lang]}</span>}
+  </header>
+
+  <p class="tagline">{project.tagline[lang]}</p>
+  <p class="desc">{project.description[lang]}</p>
+  <p class="role">{project.role[lang]}</p>
+
+  <ul class="tags">
+    {project.stack.map((s) => <li>{s}</li>)}
+  </ul>
+
+  <div class="shots" aria-label={`${project.name} ${t.screenshots}`}>
+    {shots.map((src, i) => (
+      <img src={src} alt={`${project.name} — ${t.screenshots} ${i + 1}`} width="196" height="425" loading="lazy" decoding="async" />
+    ))}
+  </div>
+
+  <div class="links">
+    {project.links.appStore && (
+      <a class="store" href={project.links.appStore} target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.6-1-2.6-3.9ZM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4Z"/></svg>
+        {t.appStore}
+      </a>
+    )}
+    {project.links.playStore && (
+      <a class="store" href={project.links.playStore} target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .3.2.6.5.7L14.7 12 4.5 2.1c-.3.1-.5.4-.5.7Zm11.5 10 2.6 2.6-11.7 6.7 9.1-9.3Zm0-1.6L6.4 1.9 18.1 8.6l-2.6 2.6Zm3.9-1.9 3 1.7c.8.5.8 1.6 0 2.1l-3 1.7-2.8-2.8 2.8-2.7Z"/></svg>
+        {t.playStore}
+      </a>
+    )}
+    {project.links.web && (
+      <a class="store ghost" href={project.links.web} target="_blank" rel="noopener">
+        {t.website} ↗
+      </a>
+    )}
+  </div>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--surface);
+  }
+  .card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    flex: none;
+  }
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+  .kind {
+    margin: 0.1rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .badge {
+    margin-left: auto;
+    align-self: flex-start;
+    white-space: nowrap;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+  }
+  .tagline {
+    margin: 0.25rem 0 0;
+    font-weight: 600;
+    font-size: 1.02rem;
+  }
+  .desc {
+    margin: 0;
+    color: var(--muted);
+  }
+  .role {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-ink);
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .tags li {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    background: var(--chip);
+    color: var(--muted);
+  }
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin-top: 0.4rem;
+  }
+  .shots img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 196 / 425;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: var(--chip);
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+  .store {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.5rem 0.85rem;
+    border-radius: 10px;
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+  }
+  .store svg {
+    width: 16px;
+    height: 16px;
+  }
+  .store.ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .store:hover {
+    opacity: 0.85;
+  }
+</style>
