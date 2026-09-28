@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro"
 import ProjectCard from "./ProjectCard.astro"
-import { clients, copy, experience, products, profile, stack, tools, type Lang } from "../data/content"
+import { copy, experience, profile, projects, stack, tools, type Lang } from "../data/content"
 
 interface Props {
   lang: Lang
@@ -58,24 +58,11 @@ const mailto = `mailto:${profile.email}`
 
     <main>
       <section id="work">
-        <h2>{t.productsTitle}</h2>
-        <p class="lead">{t.productsLead}</p>
+        <h2>{t.projectsTitle}</h2>
+        <p class="lead">{t.projectsLead}</p>
         <div class="grid">
-          {products.map((p) => <ProjectCard project={p} lang={lang} />)}
+          {projects.map((p) => <ProjectCard project={p} lang={lang} />)}
         </div>
-      </section>
-
-      <section>
-        <h2>{t.clientsTitle}</h2>
-        <p class="lead">{t.clientsLead}</p>
-        <div class="grid">
-          {clients.map((p) => <ProjectCard project={p} lang={lang} />)}
-        </div>
-        <p class="earlier">{t.earlier}</p>
-      </section>
-
-      <section>
-        <h2>{t.toolsTitle}</h2>
         <div class="tools">
           {tools.map((tool) => (
             <a class="tool" href={tool.link} target="_blank" rel="noopener">
@@ -85,6 +72,7 @@ const mailto = `mailto:${profile.email}`
             </a>
           ))}
         </div>
+        <p class="earlier">{t.earlier}</p>
       </section>
 
       <section id="experience" class="split">
@@ -303,7 +291,7 @@ const mailto = `mailto:${profile.email}`
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.25rem;
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
   }
   .tool {
     display: block;

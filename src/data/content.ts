@@ -29,7 +29,7 @@ export const profile = {
   github: "https://github.com/rodriigovieira",
 }
 
-export const products: Project[] = [
+export const projects: Project[] = [
   {
     id: "pandapdv",
     name: "PandaPDV",
@@ -48,6 +48,48 @@ export const products: Project[] = [
       web: "https://www.pandapdv.com.br",
       appStore: "https://apps.apple.com/br/app/pandapdv-gest%C3%A3o-completa/id6758158610",
       playStore: "https://play.google.com/store/apps/details?id=com.br.pandapdv",
+    },
+    shots: 3,
+  },
+  {
+    id: "qeepsake",
+    name: "Qeepsake",
+    kind: { en: "Family journal · iOS, Android, Web", pt: "Diário da família · iOS, Android, Web" },
+    tagline: {
+      en: "The family photo journal seen on Shark Tank.",
+      pt: "O diário de fotos da família que apareceu no Shark Tank.",
+    },
+    description: {
+      en: "Owned the React Native app and the Next.js web project. Rebuilt the mobile release pipeline on EAS, and worked directly with the CEO, product and marketing to plan and ship.",
+      pt: "Responsável pelo app React Native e pelo projeto web em Next.js. Reconstruí o pipeline de publicação mobile com EAS e trabalhei direto com CEO, produto e marketing.",
+    },
+    role: { en: "Senior Software Engineer · 2023–2024", pt: "Engenheiro de Software Sênior · 2023–2024" },
+    stack: ["React Native", "Expo / EAS", "Next.js", "TypeScript"],
+    links: {
+      appStore: "https://apps.apple.com/us/app/qeepsake-family-photo-album/id1332312787",
+      web: "https://qeepsake.com",
+    },
+    shots: 3,
+    badge: { en: "4.9★ · 14k+ ratings", pt: "4,9★ · 14 mil+ avaliações" },
+  },
+  {
+    id: "avodahmed",
+    name: "AvodahMed",
+    kind: { en: "Healthcare AI · iOS, Android, Web", pt: "IA para saúde · iOS, Android, Web" },
+    tagline: {
+      en: "AI ambient scribe that writes clinical notes for doctors.",
+      pt: "Escriba com IA que gera as notas clínicas para médicos.",
+    },
+    description: {
+      en: "Maintained and extended the React Native app and contributed to the Next.js products, with tRPC and Drizzle on the backend and automated releases with fastlane.",
+      pt: "Mantive e evoluí o app React Native e contribuí nos produtos Next.js, com tRPC e Drizzle no backend e publicação automatizada com fastlane.",
+    },
+    role: { en: "Senior Software Engineer · 2025–2026", pt: "Engenheiro de Software Sênior · 2025–2026" },
+    stack: ["React Native", "Next.js", "tRPC", "Drizzle", "fastlane"],
+    links: {
+      appStore: "https://apps.apple.com/us/app/avodahmed/id6740938902",
+      playStore: "https://play.google.com/store/apps/details?id=com.avodahmed.nsight.app",
+      web: "https://www.avodah.com/med",
     },
     shots: 3,
   },
@@ -71,51 +113,6 @@ export const products: Project[] = [
     },
     shots: 3,
   },
-]
-
-export const clients: Project[] = [
-  {
-    id: "qeepsake",
-    name: "Qeepsake",
-    kind: { en: "Family journal · iOS, Android, Web", pt: "Diário da família · iOS, Android, Web" },
-    tagline: {
-      en: "The family photo journal seen on Shark Tank.",
-      pt: "O diário de fotos da família que apareceu no Shark Tank.",
-    },
-    description: {
-      en: "Owned the React Native app and the Next.js web project. Rebuilt the mobile release pipeline on EAS, and worked directly with the CEO, product and marketing to plan and ship.",
-      pt: "Responsável pelo app React Native e pelo projeto web em Next.js. Reconstruí o pipeline de publicação mobile com EAS e trabalhei direto com CEO, produto e marketing.",
-    },
-    role: { en: "Senior Software Engineer · 2023–2024", pt: "Engenheiro de Software Sênior · 2023–2024" },
-    stack: ["React Native", "Expo / EAS", "Next.js", "TypeScript"],
-    links: {
-      appStore: "https://apps.apple.com/us/app/qeepsake-family-photo-album/id1332312787",
-      web: "https://www.qeepsake.com",
-    },
-    shots: 3,
-    badge: { en: "4.9★ · 14k+ ratings", pt: "4,9★ · 14 mil+ avaliações" },
-  },
-  {
-    id: "avodahmed",
-    name: "AvodahMed",
-    kind: { en: "Healthcare AI · iOS, Android, Web", pt: "IA para saúde · iOS, Android, Web" },
-    tagline: {
-      en: "AI ambient scribe that writes clinical notes for doctors.",
-      pt: "Escriba com IA que gera as notas clínicas para médicos.",
-    },
-    description: {
-      en: "Maintained and extended the React Native app and contributed to the Next.js products, with tRPC and Drizzle on the backend and automated releases with fastlane.",
-      pt: "Mantive e evoluí o app React Native e contribuí nos produtos Next.js, com tRPC e Drizzle no backend e publicação automatizada com fastlane.",
-    },
-    role: { en: "Senior Software Engineer · 2025–2026", pt: "Engenheiro de Software Sênior · 2025–2026" },
-    stack: ["React Native", "Next.js", "tRPC", "Drizzle", "fastlane"],
-    links: {
-      appStore: "https://apps.apple.com/us/app/avodahmed/id6740938902",
-      playStore: "https://play.google.com/store/apps/details?id=com.avodahmed.nsight.app",
-      web: "https://avodahmed.com",
-    },
-    shots: 3,
-  },
   {
     id: "tvl",
     name: "The Voice Library",
@@ -132,7 +129,7 @@ export const clients: Project[] = [
     stack: ["React Native", "Next.js", "TypeScript"],
     links: {
       appStore: "https://apps.apple.com/us/app/tvl/id945256287",
-      web: "https://thevoicelibrary.com",
+      web: "https://www.thevoicelibrary.net",
     },
     shots: 3,
   },
@@ -280,11 +277,8 @@ export const copy = {
       { value: "4.9★", label: "Qeepsake, 14k+ App Store ratings" },
       { value: "6", label: "live apps on the stores, below" },
     ],
-    productsTitle: "My own products",
-    productsLead: "Designed, built, published and run by me — code, infrastructure and the store listings.",
-    clientsTitle: "Client work",
-    clientsLead: "Apps I've built and maintained for startups and product teams. All live today.",
-    toolsTitle: "Tools & side projects",
+    projectsTitle: "Projects",
+    projectsLead: "Apps I've built and shipped — all live today. Tap through to the store or the product's site.",
     experienceTitle: "Experience",
     stackTitle: "What I work with",
     earlier:
@@ -295,7 +289,6 @@ export const copy = {
     emailMe: "Email me",
     appStore: "App Store",
     playStore: "Google Play",
-    website: "Website",
     screenshots: "screenshots",
     footer: "Built with Astro. Source on",
   },
@@ -320,11 +313,8 @@ export const copy = {
       { value: "4,9★", label: "Qeepsake, 14 mil+ avaliações na App Store" },
       { value: "6", label: "apps publicados nas lojas, abaixo" },
     ],
-    productsTitle: "Meus produtos",
-    productsLead: "Projetados, construídos, publicados e operados por mim — código, infraestrutura e publicação nas lojas.",
-    clientsTitle: "Trabalhos para clientes",
-    clientsLead: "Apps que construí e mantive para startups e times de produto. Todos no ar hoje.",
-    toolsTitle: "Ferramentas e projetos paralelos",
+    projectsTitle: "Projetos",
+    projectsLead: "Apps que construí e publiquei — todos no ar hoje. Acesse a loja ou o site de cada produto.",
     experienceTitle: "Experiência",
     stackTitle: "Com o que eu trabalho",
     earlier:
@@ -335,7 +325,6 @@ export const copy = {
     emailMe: "Mande um e-mail",
     appStore: "App Store",
     playStore: "Google Play",
-    website: "Site",
     screenshots: "capturas de tela",
     footer: "Feito com Astro. Código no",
   },
