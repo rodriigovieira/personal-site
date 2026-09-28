@@ -188,15 +188,6 @@ export interface Tool {
 
 export const tools: Tool[] = [
   {
-    name: "Panda Code",
-    description: {
-      en: "Open-source macOS app for running many Claude Code and Codex agent sessions side by side, with a self-hosted iPhone companion to follow them on the go.",
-      pt: "App open source para macOS que roda várias sessões de agentes Claude Code e Codex lado a lado, com um app de iPhone self-hosted para acompanhar de qualquer lugar.",
-    },
-    link: "https://github.com/rodriigovieira/panda-code",
-    linkLabel: { en: "Source on GitHub", pt: "Código no GitHub" },
-  },
-  {
     name: "MedSlides",
     description: {
       en: "AI-generated slide decks for doctors. Runs entirely in the browser and exports to PowerPoint.",
@@ -204,6 +195,87 @@ export const tools: Tool[] = [
     },
     link: "https://medslides.vercel.app",
     linkLabel: { en: "Try it", pt: "Experimentar" },
+  },
+]
+
+export const pandaCode = {
+  name: "Panda Code",
+  description: {
+    en: "A local-first macOS app for running many Claude Code and Codex agent sessions side by side, with a self-hosted iPhone companion to follow and approve them on the go. Electron and React on the desktop, Flutter on the phone, an end-to-end encrypted relay in between.",
+    pt: "Um app macOS local-first para rodar várias sessões de agentes Claude Code e Codex lado a lado, com um app de iPhone self-hosted para acompanhar e aprovar de qualquer lugar. Electron e React no desktop, Flutter no celular e um relay com criptografia ponta a ponta entre eles.",
+  },
+  stack: ["Electron", "React", "TypeScript", "Flutter", "Convex"],
+  link: "https://github.com/rodriigovieira/panda-code",
+}
+
+export interface Contribution {
+  repo: string
+  url: string
+  stars?: string
+  summary: Text
+  prs: { label: string; url: string; merged: boolean }[]
+}
+
+export const contributions: Contribution[] = [
+  {
+    repo: "React Native — official docs",
+    url: "https://github.com/react/react-native-website",
+    summary: {
+      en: "Rewrote the Animations guide example with React Hooks, in the official React Native documentation.",
+      pt: "Reescrevi o exemplo do guia de Animações com React Hooks, na documentação oficial do React Native.",
+    },
+    prs: [{ label: "#1144", url: "https://github.com/react/react-native-website/pull/1144", merged: true }],
+  },
+  {
+    repo: "React Native Paper",
+    url: "https://github.com/callstack/react-native-paper",
+    stars: "14k★",
+    summary: {
+      en: "Fixed the Dialog.ScrollArea example in Callstack's Material Design component library.",
+      pt: "Corrigi o exemplo do Dialog.ScrollArea na biblioteca de componentes Material Design da Callstack.",
+    },
+    prs: [{ label: "#1124", url: "https://github.com/callstack/react-native-paper/pull/1124", merged: true }],
+  },
+  {
+    repo: "react-native-navigation-drawer-extension",
+    url: "https://github.com/lukebrandonfarrell/react-native-navigation-drawer-extension",
+    stars: "200+★",
+    summary: {
+      en: "Swipe-to-close gesture, orientation support, TypeScript types and docs, and the example app.",
+      pt: "Gesto de fechar deslizando, suporte a orientação de tela, tipos TypeScript e docs, e o app de exemplo.",
+    },
+    prs: [
+      { label: "#33", url: "https://github.com/lukebrandonfarrell/react-native-navigation-drawer-extension/pull/33", merged: true },
+      { label: "#34", url: "https://github.com/lukebrandonfarrell/react-native-navigation-drawer-extension/pull/34", merged: true },
+      { label: "#35", url: "https://github.com/lukebrandonfarrell/react-native-navigation-drawer-extension/pull/35", merged: true },
+      { label: "#36", url: "https://github.com/lukebrandonfarrell/react-native-navigation-drawer-extension/pull/36", merged: true },
+    ],
+  },
+  {
+    repo: "rn-apple-healthkit",
+    url: "https://github.com/lucaspbordignon/rn-apple-healthkit",
+    stars: "500+★",
+    summary: {
+      en: "Native iOS (Objective-C) support for reading Apple Health active minutes from React Native.",
+      pt: "Suporte nativo iOS (Objective-C) para ler os minutos ativos do Apple Saúde a partir do React Native.",
+    },
+    prs: [{ label: "#199", url: "https://github.com/lucaspbordignon/rn-apple-healthkit/pull/199", merged: false }],
+  },
+  {
+    repo: "redux-persist-machine · redux-nl",
+    url: "https://github.com/lukebrandonfarrell/redux-persist-machine",
+    summary: {
+      en: "Automatic state loading, API improvements and a full TypeScript conversion for two Redux libraries used in React Native apps.",
+      pt: "Carregamento automático de estado, melhorias de API e conversão completa para TypeScript de duas bibliotecas Redux usadas em apps React Native.",
+    },
+    prs: [
+      { label: "#3", url: "https://github.com/lukebrandonfarrell/redux-persist-machine/pull/3", merged: true },
+      { label: "#4", url: "https://github.com/lukebrandonfarrell/redux-persist-machine/pull/4", merged: true },
+      { label: "#5", url: "https://github.com/lukebrandonfarrell/redux-persist-machine/pull/5", merged: true },
+      { label: "#6", url: "https://github.com/lukebrandonfarrell/redux-persist-machine/pull/6", merged: true },
+      { label: "#7", url: "https://github.com/lukebrandonfarrell/redux-persist-machine/pull/7", merged: true },
+      { label: "redux-nl #5", url: "https://github.com/lukebrandonfarrell/redux-nl/pull/5", merged: true },
+    ],
   },
 ]
 
@@ -285,7 +357,7 @@ export const copy = {
     title: "Rodrigo Rodrigues — Senior Mobile & Full-stack Engineer",
     description:
       "Senior software engineer building React Native and Next.js apps that ship to the App Store and Google Play.",
-    nav: { work: "Work", experience: "Experience", contact: "Contact" },
+    nav: { work: "Work", experience: "Experience", openSource: "Open source", contact: "Contact" },
     switchLabel: "Português",
     switchHref: "/pt/",
     role: "Senior Software Engineer",
@@ -302,6 +374,12 @@ export const copy = {
     projectsTitle: "Projects",
     projectsLead: "Apps I've built and shipped — all live today. Tap through to the store or the product's site.",
     experienceTitle: "Experience",
+    openSourceTitle: "Open source",
+    openSourceLead: "My own open-source app, and contributions to the React Native ecosystem.",
+    contributionsTitle: "Contributions",
+    viewSource: "Source on GitHub",
+    merged: "merged",
+    openPr: "open",
     stackTitle: "What I work with",
     contactTitle: "Let's build something",
     contactLead:
@@ -317,7 +395,7 @@ export const copy = {
     title: "Rodrigo Rodrigues — Engenheiro Mobile e Full-stack Sênior",
     description:
       "Engenheiro de software sênior que cria apps em React Native e Next.js publicados na App Store e Google Play.",
-    nav: { work: "Trabalhos", experience: "Experiência", contact: "Contato" },
+    nav: { work: "Trabalhos", experience: "Experiência", openSource: "Open source", contact: "Contato" },
     switchLabel: "English",
     switchHref: "/",
     role: "Engenheiro de Software Sênior",
@@ -334,6 +412,12 @@ export const copy = {
     projectsTitle: "Projetos",
     projectsLead: "Apps que construí e publiquei — todos no ar hoje. Acesse a loja ou o site de cada produto.",
     experienceTitle: "Experiência",
+    openSourceTitle: "Open source",
+    openSourceLead: "Meu app open source e contribuições para o ecossistema React Native.",
+    contributionsTitle: "Contribuições",
+    viewSource: "Código no GitHub",
+    merged: "merged",
+    openPr: "aberto",
     stackTitle: "Com o que eu trabalho",
     contactTitle: "Vamos construir algo",
     contactLead:

@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro"
 import ProjectCard from "./ProjectCard.astro"
-import { copy, experience, profile, projects, stack, tools, type Lang } from "../data/content"
+import { contributions, copy, experience, pandaCode, profile, projects, stack, tools, type Lang } from "../data/content"
 
 interface Props {
   lang: Lang
@@ -19,6 +19,7 @@ const mailto = `mailto:${profile.email}`
       <div class="nav-links">
         <a href="#work">{t.nav.work}</a>
         <a href="#experience">{t.nav.experience}</a>
+        <a href="#open-source">{t.nav.openSource}</a>
         <a href="#contact">{t.nav.contact}</a>
         <a class="lang" href={t.switchHref} hreflang={lang === "pt" ? "en" : "pt-BR"}>{t.switchLabel}</a>
       </div>
@@ -94,6 +95,49 @@ const mailto = `mailto:${profile.email}`
             {stack.map((s) => <li>{s}</li>)}
           </ul>
         </div>
+      </section>
+
+      <section id="open-source">
+        <h2>{t.openSourceTitle}</h2>
+        <p class="lead">{t.openSourceLead}</p>
+
+        <article class="oss-feature">
+          <div class="oss-text">
+            <div class="oss-head">
+              <img src="/img/pandacode-icon.webp" alt="" width="56" height="56" loading="lazy" />
+              <h3><a href={pandaCode.link} target="_blank" rel="noopener">{pandaCode.name}</a></h3>
+            </div>
+            <p>{pandaCode.description[lang]}</p>
+            <ul class="oss-tags">
+              {pandaCode.stack.map((s) => <li>{s}</li>)}
+            </ul>
+            <a class="btn" href={pandaCode.link} target="_blank" rel="noopener">{t.viewSource} ↗</a>
+          </div>
+          <div class="oss-shots">
+            <img src="/img/pandacode-desktop.webp" alt={`${pandaCode.name} — macOS`} width="1264" height="696" loading="lazy" decoding="async" />
+            <img src="/img/pandacode-mobile.webp" alt={`${pandaCode.name} — iPhone`} width="1320" height="760" loading="lazy" decoding="async" />
+          </div>
+        </article>
+
+        <h3 class="contrib-title">{t.contributionsTitle}</h3>
+        <ul class="contribs">
+          {contributions.map((c) => (
+            <li>
+              <div class="contrib-head">
+                <a class="contrib-repo" href={c.url} target="_blank" rel="noopener">{c.repo}</a>
+                {c.stars && <span class="contrib-stars">{c.stars}</span>}
+              </div>
+              <p>{c.summary[lang]}</p>
+              <div class="prs">
+                {c.prs.map((pr) => (
+                  <a href={pr.url} target="_blank" rel="noopener" class:list={["pr", { open: !pr.merged }]}>
+                    {pr.label} · {pr.merged ? t.merged : t.openPr}
+                  </a>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section id="contact" class="contact">
@@ -286,6 +330,125 @@ const mailto = `mailto:${profile.email}`
     color: var(--accent-ink);
   }
 
+  .oss-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--surface);
+  }
+  .oss-head {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .oss-head img {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+  }
+  .oss-head h3 {
+    margin: 0;
+    font-size: 1.35rem;
+  }
+  .oss-head a {
+    text-decoration: none;
+  }
+  .oss-text p {
+    color: var(--muted);
+  }
+  .oss-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+  }
+  .oss-tags li {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    background: var(--chip);
+    color: var(--muted);
+  }
+  .oss-shots {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .oss-shots img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+  }
+  .contrib-title {
+    margin: 2.5rem 0 0;
+    font-size: 1.2rem;
+  }
+  .contribs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+  .contribs li {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--surface);
+  }
+  .contrib-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .contrib-repo {
+    font-weight: 700;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+  .contrib-repo:hover {
+    text-decoration: underline;
+  }
+  .contrib-stars {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .contribs p {
+    margin: 0.35rem 0 0.7rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .prs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .pr {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--ok) 14%, transparent);
+    color: var(--ok);
+    text-decoration: none;
+  }
+  .pr.open {
+    background: var(--chip);
+    color: var(--muted);
+  }
+  .pr:hover {
+    text-decoration: underline;
+  }
+
   .split {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
@@ -381,7 +544,9 @@ const mailto = `mailto:${profile.email}`
   @media (max-width: 860px) {
     .grid,
     .tools,
-    .split {
+    .split,
+    .oss-feature,
+    .contribs {
       grid-template-columns: minmax(0, 1fr);
     }
     .split {
